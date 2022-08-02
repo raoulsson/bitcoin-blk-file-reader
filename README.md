@@ -18,7 +18,7 @@ NOTICE: Some addresses are not calculated yet, they are multisig addresses, I di
 # Update: July 2022 - raoulsson
 Adapted code to run under Python 3.x. Added two params to log only one block, by number script parameter, or a block and a transaction by number. Again by param. Like:
 
-Usage: python analyze.py <file-path> <block-to-log> <transaction-of-that-block-to-log>
+Usage: ```python analyze.py <file-path> <block-to-log> <transaction-of-that-block-to-log>```
 
 Note: publicKeyDecode() for address currently not working. Will fix soon.
 
