@@ -192,7 +192,7 @@ def readTransaction(blockFile, transactionIndex):
             log("\nLock Time is Block Height: " + str(lockTime))
     else:
         if transactionIndex == logTxNum - 1 and blockCount == logBlockNum:
-            log("\nLock Time is Timestamp: " + datetime.datetime.fromtimestamp(lockTime).strftime('%d.%m.%Y %H:%M'))
+            log("\nLock Time is Timestamp: " + datetime.datetime.fromtimestamp(lockTime).strftime('%Y-%m-%d %H:%M:%S'))
 
     endByte = blockFile.tell()
     blockFile.seek(beginByte)
@@ -225,7 +225,7 @@ def readBlock(blockFile):
     previousHash = binascii.hexlify(blockFile.read(32))
     merkleHash = binascii.hexlify(blockFile.read(32))
     creationTimeTimestamp = hexToInt(readIntLittleEndian(blockFile))
-    creationTime = datetime.datetime.fromtimestamp(creationTimeTimestamp).strftime('%d.%m.%Y %H:%M')
+    creationTime = datetime.datetime.fromtimestamp(creationTimeTimestamp).strftime('%Y-%m-%d %H:%M:%S')
     bits = hexToInt(readIntLittleEndian(blockFile))
     nonce = hexToInt(readIntLittleEndian(blockFile))
     countOfTransactions = readVarInt(blockFile)
